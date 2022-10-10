@@ -29,7 +29,7 @@ import { CargaImagenesService } from './services/cargaImagenes.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

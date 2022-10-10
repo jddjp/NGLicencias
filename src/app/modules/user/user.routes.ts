@@ -6,6 +6,16 @@ import { VerificarCorreoComponent } from '../../auth/user/verificar-correo/verif
 import { CategoriasComponent } from './categorias/categorias.component';
 import { NominacionesComponent } from './nominaciones/nominaciones.component';
 import { ContactoComponent } from './contacto/contacto.component';
+
+//Nuevos modulos de formularios
+import { AltasComponent } from './altas/altas.component';
+import { BajasComponent } from './bajas/bajas.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { ReportesComponent } from './reportes/reportes.component';
+
+
+
+
 //import { NotFoundComponent } from '../not-found/not-found.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MiInformacionComponent } from './mi-informacion/mi-informacion.component';
@@ -17,9 +27,10 @@ export const userRoutes: Routes = [
     { path: 'registro', component: RegistroUserComponent },
     { path: 'recuperarPassword', component: RecuperarPasswordComponent },
     { path: 'verificarCorreo', component: VerificarCorreoComponent },
-    { path: 'categorias', component: CategoriasComponent },
-    { path: 'nominaciones', component: NominacionesComponent },
-    { path: 'contacto', component: ContactoComponent },
+    { path: 'altas', component: AltasComponent },
+    { path: 'bajas', component: BajasComponent },
+    { path: 'busqueda', component: BusquedaComponent },
+    { path: 'reportes', component: ReportesComponent },
     { path: 'inicio', component: InicioComponent },
     { path: 'mi-informacion', component: MiInformacionComponent, canActivate: [AuthGuard] },
     { path: 'mis-nominaciones', component: MisNominacionesComponent, canActivate: [AuthGuard] },

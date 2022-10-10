@@ -1,0 +1,257 @@
+<div class="container mt-3 mb-5">
+    <h3>Altas de Usuarios</h3>
+    <hr>
+
+    <p-accordion [multiple]="true">
+        <p-accordionTab header="Datos Personales" [selected]="true">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <br>
+                        <div class="grid">
+                            <h5>Nombres</h5>
+                            <hr>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Nombre (s):</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Apellido Paterno</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Apellido Materno</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Fecha de nacimiento</label>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <br>
+                        <div class="grid">
+                            <h5>Direccion</h5>
+                            <hr>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Calle</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Colonia</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Codigo Postal</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">No. Interior/Exterior</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Estado</label>
+                                </span>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="grid">
+                            <br>
+                            <br>
+                            <h5></h5>
+                            <hr>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Municipio</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Estado Civil</label>
+                                </span>
+                            </div>
+                            <br>
+                            <h5>Contacto</h5>
+                            <hr>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Correo Electronico</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Numero Telefonico</label>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </p-accordionTab>
+        <p-accordionTab header="Historial Academico">
+            Content 2
+        </p-accordionTab>
+        <p-accordionTab header="Estado General de Salud">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <div class="grid">
+                            <br>
+                            <div *ngFor="let category of categories" class="p-field-checkbox">
+                                <p-checkbox name="group2" value="category" [value]="category"
+                                    [(ngModel)]="selectedCategories" [inputId]="category.key"
+                                    [disabled]="category.key === 'R'"></p-checkbox>
+                                <label [for]="category.key">{{category.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="grid">
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <textarea id="float-input" type="text" [rows]="5" [cols]="30"
+                                        pInputTextarea></textarea>
+                                    <label for="float-input">Especifique el padecimiento</label>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </p-accordionTab>
+        <p-accordionTab header="Informacion Adicional">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <br>
+                        <div class="grid">
+
+
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Puesto:</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Numero de Empleado</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">No. Años en el puesto</label>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <br>
+                        <div class="grid">
+
+
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Puestos Anteriores</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Despartamento/àrea</label>
+                                </span>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <input id="float-input" type="text" pInputText>
+                                    <label for="float-input">Aptitudes C.H:</label>
+                                </span>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <br>
+                        <div class="grid">
+
+
+                            <br>
+                            <div class="field">
+                                <span class="p-float-label">
+                                    <textarea id="float-input" type="text" [rows]="5" [cols]="30"
+                                        pInputTextarea></textarea>
+
+
+                                    <label for="float-input">Historial</label>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </p-accordionTab>
+    </p-accordion>

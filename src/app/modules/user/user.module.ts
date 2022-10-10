@@ -16,6 +16,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { SidebarModule } from 'primeng/sidebar';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import {AccordionModule} from 'primeng/accordion';
+import {CheckboxModule} from 'primeng/checkbox';
 
 import { CategoriasComponent } from './categorias/categorias.component';
 import { NominacionesComponent } from './nominaciones/nominaciones.component';
@@ -25,6 +27,11 @@ import { MiInformacionComponent } from './mi-informacion/mi-informacion.componen
 import { MisNominacionesComponent } from './mis-nominaciones/mis-nominaciones.component';
 import { AddNominacionComponent } from './mis-nominaciones/add-nominacion/add-nominacion.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { AltasComponent } from './altas/altas.component';
+import { BajasComponent } from './bajas/bajas.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { ReportesComponent } from './reportes/reportes.component';
+
 
 @NgModule({
     imports: [
@@ -41,7 +48,9 @@ import { InputTextModule } from 'primeng/inputtext';
         SidebarModule,
         TableModule,
         ButtonModule,
-        InputTextModule
+        InputTextModule,
+        AccordionModule,
+        CheckboxModule
     ],
     declarations: [
         UserComponent,
@@ -52,6 +61,10 @@ import { InputTextModule } from 'primeng/inputtext';
         MiInformacionComponent,
         MisNominacionesComponent,
         AddNominacionComponent,
+        AltasComponent,
+        BajasComponent,
+        BusquedaComponent,
+        ReportesComponent,
     ],
 })
 export class UserModule { }
