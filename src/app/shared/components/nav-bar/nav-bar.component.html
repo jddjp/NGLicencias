@@ -1,5 +1,5 @@
 <!-- Nav bar usuario -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="type == 'user'">
+<nav  class="navbar navbar-expand-lg navbar-dark bg-dark"  *ngIf="type == 'user'">
     <div class="container-fluid">
         <a class="navbar-brand" routerLink="/portal/inicio">
             <a class="navbar-brand" routerLink="/portal/inicio">
@@ -42,7 +42,7 @@
                   </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="left: unset;">
                         <li><a class="dropdown-item" routerLink="/portal/mi-informacion">Mi Informaci&oacute;n</a></li>
-                        <li><a class="dropdown-item" routerLink="/portal/mis-nominaciones">Mis Nominaciones</a></li>
+                        <!-- <li><a class="dropdown-item" routerLink="/portal/mis-nominaciones">Mis Nominaciones</a></li> -->
                     </ul>
                 </div>
                 <a class="nav-link" style="cursor: pointer;" (click)="logout()" *ngIf="configService.Usuario">Cerrar Sesión</a>

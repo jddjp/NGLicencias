@@ -18,6 +18,7 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import {AccordionModule} from 'primeng/accordion';
 import {CheckboxModule} from 'primeng/checkbox';
+import {InputSwitchModule} from 'primeng/inputswitch';
 
 import { CategoriasComponent } from './categorias/categorias.component';
 import { NominacionesComponent } from './nominaciones/nominaciones.component';
@@ -31,7 +32,11 @@ import { AltasComponent } from './altas/altas.component';
 import { BajasComponent } from './bajas/bajas.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ReportesComponent } from './reportes/reportes.component';
-
+import {CalendarModule} from 'primeng/calendar';
+import { ToolbarModule } from 'primeng/toolbar';
+import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
 
 @NgModule({
     imports: [
@@ -50,8 +55,14 @@ import { ReportesComponent } from './reportes/reportes.component';
         ButtonModule,
         InputTextModule,
         AccordionModule,
-        CheckboxModule
-    ],
+        CheckboxModule,
+        InputSwitchModule,
+        CalendarModule,
+        ToolbarModule,
+        DialogModule,
+        ConfirmDialogModule,
+     
+    ], providers: [ConfirmationService],
     declarations: [
         UserComponent,
         CategoriasComponent,
