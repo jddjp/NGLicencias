@@ -3,7 +3,8 @@ import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
 import { addDoc, collection, CollectionReference, Firestore, getFirestore, onSnapshot, QuerySnapshot, Timestamp } from 'firebase/firestore';
 import { ToastrService } from 'ngx-toastr';
 import { Subject } from 'rxjs';
-
+import { VariablesService } from 'src/app/services/variablesGL.service';
+import { ContactoService } from 'src/app/services/contacto.service';
 
 @Component({
   selector: 'app-altas',
@@ -55,9 +56,18 @@ export class AltausuariosService {
   private updatedSnapshot = new Subject<QuerySnapshot<DocumentData>>();
   obsr_UpdatedSnapshot = this.updatedSnapshot.asObservable();
 
+  contactomodel = {
+    name: '',
+    correo: '',
+    mensaje:'',
+    telefono:''
+  }
+
   constructor(
+
+    //added Alta 
+    private contactoService: ContactoService,
     private toastr: ToastrService,
-    private firestore: Firestore
   ) {
 
     this.db = getFirestore();
@@ -91,6 +101,17 @@ export class AltausuariosService {
     return this.toastr.success('Registro Guardado  con exito!!', 'Exito');
   }
 
+  //Add alta service
+  async add() {
+    const { name, correo,telefono,mensaje } = this.contactomodel;
+    await   this.contactoService.addAltas({
+      nombre: name,
+      correo: correo,
+      telefono: telefono,
+      mensaje: mensaje,
+    });
+    this.toastr.success('Alguien Se pondra en contacto!', 'Success');
+  }
 
 
 }

@@ -34,14 +34,14 @@ export class ContactoService {
   })
   }
 
-  async addNominacion(contacto: ContactoModel){
-    await addDoc(collection(this.afs,'mensajesContacto'), contacto)
+  async addAltas(altas: ContactoModel){
+    await addDoc(collection(this.afs,'altasUsuarios'), altas)
     .then(docRef => {
-      console.log('El CONTACTO se grabo con el ID: ', docRef.id);
+      console.log('El Registro se grabo con el ID: ', docRef.id);
       this.variablesGL.endProcessNominacion.next(docRef.id);
     })
     .catch(error => {
-      console.log('EL CONTACTO no se grabo: ', error);
+      console.log('EL Registro no se grabo: ', error);
       this.variablesGL.endProcessNominacion.next('');
     });
   }
