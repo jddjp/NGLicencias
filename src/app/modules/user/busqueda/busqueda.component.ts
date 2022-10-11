@@ -15,11 +15,11 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 export class BusquedaComponent implements OnInit {
   convocatoria = {
     nombre: '',
-    fechaInicio: '',
+    numeroTelefonico: '',
     fechaFin: ''
   }
 
-  convocatoriaCollectiondata: { id: string, nombre: string, fechaInicio: Date, fechaFin: Date }[] | any = [];
+  convocatoriaCollectiondata: { id: string, nombre: string, numeroTelefonico: Date, fechaFin: Date }[] | any = [];
   convocatoriaForm: FormGroup;
   submitted: boolean;
 

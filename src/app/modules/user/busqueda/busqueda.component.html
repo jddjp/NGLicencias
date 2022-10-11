@@ -27,7 +27,7 @@
                     <p-sortIcon field="fechaFin"></p-sortIcon>
                 </th>
                 <th pSortableColumn="fechaFin">
-                    Historial Academico
+                    Departamento/Area
                    <p-sortIcon field="fechaFin"></p-sortIcon>
                </th>
                <th pSortableColumn="fechaFin">
@@ -35,7 +35,7 @@
                <p-sortIcon field="fechaFin"></p-sortIcon>
            </th>
            <th pSortableColumn="fechaFin">
-            Informacion Adicional
+            puestoTrabajo
            <p-sortIcon field="fechaFin"></p-sortIcon>
        </th>
                 <th>
@@ -50,13 +50,28 @@
                 </td>
 
                 <td>
-                    <p>{{convocatoria.fechaInicio}}</p>
+                    <p>{{'calle :'+convocatoria.callel}}</p>
+                    <p>{{'colonia :'+convocatoria.colonia}}</p>
+                     <p>{{'codigoPostal:'+convocatoria.codigoPostal}}</p>   
+                     <p>{{'Estado:'+convocatoria.estado}}</p>
                 </td>
                 <td>
-                    <p>{{convocatoria.fechaFin}}</p>
+                    <p>{{convocatoria.numeroTelefonico}}</p>
+                    <p>{{convocatoria.correoElectro}}</p>
                 </td>
-
-
+                <td>
+                    <p>{{convocatoria.departamentooArea}}</p>
+                  
+                </td>
+                <td>
+                    <p>{{convocatoria.puestoTrabajo}}</p>
+                  
+                </td>
+                <td>
+                    <p>{{convocatoria.puestoTrabajo}}</p>
+                  
+                </td>
+                
                 <td>
                     <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(convocatoria)"></button>
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editar(convocatoria)" (click)="edit"></button>
