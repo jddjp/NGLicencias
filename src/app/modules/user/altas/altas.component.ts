@@ -364,7 +364,7 @@ export class AltasComponent implements OnInit {
       coloniadesinstalación: '',
       estadoinstitución: ''
     });
-    this.toastr.success('Alguien Se pondra en contacto!', 'Success');
+    this.toastr.success('Se dio de alta correctamente!', 'Success');
   }
 
 
