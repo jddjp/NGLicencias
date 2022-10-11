@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, DocumentData } from '@angular/fire/compat/firestore';
+import { addDoc, collection, CollectionReference, Firestore, getFirestore, onSnapshot, QuerySnapshot, Timestamp } from 'firebase/firestore';
+import { ToastrService } from 'ngx-toastr';
+import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-altas',
@@ -25,7 +30,7 @@ export class AltasComponent implements OnInit {
   constructor() { }
   selectedCategories: any[] = [];
   ngOnInit(): void {
-   // this.selectedCategories = this.categories.slice(1, 3);
+    // this.selectedCategories = this.categories.slice(1, 3);
     this.es = {
       firstDayOfWeek: 1,
       dayNames: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
@@ -37,5 +42,55 @@ export class AltasComponent implements OnInit {
       clear: 'Borrar'
     }
   }
+
+
+
+
+
+}
+export class AltausuariosService {
+
+  db: Firestore;
+  altausuarios: CollectionReference<DocumentData>;
+  private updatedSnapshot = new Subject<QuerySnapshot<DocumentData>>();
+  obsr_UpdatedSnapshot = this.updatedSnapshot.asObservable();
+
+  constructor(
+    private toastr: ToastrService,
+    private firestore: Firestore
+  ) {
+
+    this.db = getFirestore();
+    this.altausuarios = collection(this.db, 'Altas de Usuarios');
+    // Get Realtime Data
+    console.log(this.altausuarios);
+
+    onSnapshot(this.altausuarios, (snapshot) => {
+      this.updatedSnapshot.next(snapshot);
+    }, (err) => {
+      console.log(err);
+    })
+  }
+
+
+  
+  async addaltausuari(id: number, nombre: string, apm: string, app: string, copostal: number, colonia: string, 
+    dirreccion: string, fechanacimiento:Timestamp ,nointerior: number,) {
+    await addDoc(this.altausuarios, {
+      id,
+      nombre,
+      apm,
+      app,
+      copostal,
+      colonia,
+      dirreccion,
+      fechanacimiento,
+      nointerior
+      
+    })
+    return this.toastr.success('Registro Guardado  con exito!!', 'Exito');
+  }
+
+
 
 }

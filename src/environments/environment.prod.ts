@@ -2,14 +2,13 @@ export const environment = {
   production: true,
   apiService: '',
   firebase: {
-    projectId: 'rewards-latino',
-    appId: '1:415683183727:web:626ceaf1a4b629376e399a',
-    storageBucket: 'rewards-latino.appspot.com',
-    locationId: 'us-central',
-    apiKey: 'AIzaSyCN-xRqybAkJJQjIcCCJoyvGJtc7sbjV7A',
-    authDomain: 'rewards-latino.firebaseapp.com',
-    messagingSenderId: '415683183727',
-    measurementId: 'G-82P6Z9PXH7',
+    apiKey: "AIzaSyAJ7dz_9-yMgXAuLxtVGPG4La5yNONYt5k",
+      authDomain: "bearitnglicencias.firebaseapp.com",
+      projectId: "bearitnglicencias",
+      storageBucket: "bearitnglicencias.appspot.com",
+      messagingSenderId: "917553965589",
+      appId: "1:917553965589:web:98549485230ecfd94c3c1c",
+      measurementId: "G-0XRLXZE9PV"
   }
 };
 // export const environment = {
