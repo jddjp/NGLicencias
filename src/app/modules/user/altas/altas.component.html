@@ -1,7 +1,7 @@
 <div class="container mt-3 mb-5">
     <h3>Altas de Usuarios</h3>
     <hr>
-
+    <form class="add">
     <p-accordion [multiple]="true">
         <p-accordionTab header="Datos Personales" [selected]="true">
             <div class="container">
@@ -14,14 +14,14 @@
                             <br>
                             <div class="field">
                                 <span class="p-float-label">
-                                    <input id="float-input" type="text" pInputText>
-                                    <label for="float-input">Nombre (s):</label>
+                                    <input id="float-input" type="text" pInputText [(ngModel)]="contactomodel.nombre">
+                                    <label for="float-input" id="nombre" name="nombre" required >Nombre (s):</label>
                                 </span>
                             </div>
                             <br>
                             <div class="field">
                                 <span class="p-float-label">
-                                    <input id="float-input" type="text" pInputText>
+                                    <input id="float-input" type="text" pInputText [(ngModel)]="contactomodel.apellidoPaterno">
                                     <label for="float-input">Apellido Paterno</label>
                                 </span>
                             </div>
@@ -829,9 +829,11 @@
           <div class="col">
             
             
-            <button pButton pRipple type="button" icon="pi pi-user"   label="Registrar alta" class="p-button-rounded p-button-success"></button>
+            <button pButton pRipple type="button" icon="pi pi-user"   label="Registrar alta" class="p-button-rounded p-button-success"   (click)="add()"></button>
           
           </div>
         </div>
       </div>
+
+    </form>
   

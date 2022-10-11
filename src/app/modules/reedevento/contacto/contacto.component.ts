@@ -37,7 +37,7 @@ export class ContactoComponent implements OnInit {
 
   async add() {
     const { name, correo,telefono,mensaje } = this.contactomodel;
-    await   this.contactoService.addNominacion({
+    await   this.contactoService.addAltas({
       nombre: name,
       correo: correo,
       telefono: telefono,

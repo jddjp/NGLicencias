@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Subject } from 'rxjs';
 import { VariablesService } from 'src/app/services/variablesGL.service';
 import { ContactoService } from 'src/app/services/contacto.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-altas',
@@ -12,6 +13,18 @@ import { ContactoService } from 'src/app/services/contacto.service';
   styleUrls: ['./altas.component.css']
 })
 export class AltasComponent implements OnInit {
+  contactomodel = {
+    nombre: '',
+    apellidoPaterno: '',
+    mensaje:'',
+    telefono:''
+  }
+
+ 
+  contactoForm: FormGroup;
+  submitted: boolean;
+
+
   categories: any[] =
     [
       { name: 'Hepatitis.', key: 'Hepatitis.' },
@@ -28,10 +41,19 @@ export class AltasComponent implements OnInit {
 
   es: any;
   checked2: boolean = true;
-  constructor() { }
   selectedCategories: any[] = [];
+ 
+
+
+
+
+  constructor(
+    private contactoService: ContactoService,
+    private toastr: ToastrService,
+
+  ) { }
+
   ngOnInit(): void {
-    // this.selectedCategories = this.categories.slice(1, 3);
     this.es = {
       firstDayOfWeek: 1,
       dayNames: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
@@ -45,68 +67,11 @@ export class AltasComponent implements OnInit {
   }
 
 
-
-
-
-}
-export class AltausuariosService {
-
-  db: Firestore;
-  altausuarios: CollectionReference<DocumentData>;
-  private updatedSnapshot = new Subject<QuerySnapshot<DocumentData>>();
-  obsr_UpdatedSnapshot = this.updatedSnapshot.asObservable();
-
-  contactomodel = {
-    name: '',
-    correo: '',
-    mensaje:'',
-    telefono:''
-  }
-
-  constructor(
-
-    //added Alta 
-    private contactoService: ContactoService,
-    private toastr: ToastrService,
-  ) {
-
-    this.db = getFirestore();
-    this.altausuarios = collection(this.db, 'Altas de Usuarios');
-    // Get Realtime Data
-    console.log(this.altausuarios);
-
-    onSnapshot(this.altausuarios, (snapshot) => {
-      this.updatedSnapshot.next(snapshot);
-    }, (err) => {
-      console.log(err);
-    })
-  }
-
-
-  
-  async addaltausuari(id: number, nombre: string, apm: string, app: string, copostal: number, colonia: string, 
-    dirreccion: string, fechanacimiento:Timestamp ,nointerior: number,) {
-    await addDoc(this.altausuarios, {
-      id,
-      nombre,
-      apm,
-      app,
-      copostal,
-      colonia,
-      dirreccion,
-      fechanacimiento,
-      nointerior
-      
-    })
-    return this.toastr.success('Registro Guardado  con exito!!', 'Exito');
-  }
-
-  //Add alta service
   async add() {
-    const { name, correo,telefono,mensaje } = this.contactomodel;
+    const { nombre, apellidoPaterno,telefono,mensaje } = this.contactomodel;
     await   this.contactoService.addAltas({
-      nombre: name,
-      correo: correo,
+      nombre: nombre,
+      correo: apellidoPaterno,
       telefono: telefono,
       mensaje: mensaje,
     });
@@ -114,4 +79,9 @@ export class AltausuariosService {
   }
 
 
-}
+
+
+  }
+
+
+
