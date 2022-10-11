@@ -16,11 +16,11 @@ export class AltasComponent implements OnInit {
   contactomodel = {
     nombre: '',
     apellidoPaterno: '',
-    mensaje:'',
-    telefono:''
+    mensaje: '',
+    telefono: ''
   }
 
- 
+
   contactoForm: FormGroup;
   submitted: boolean;
 
@@ -42,7 +42,7 @@ export class AltasComponent implements OnInit {
   es: any;
   checked2: boolean = true;
   selectedCategories: any[] = [];
- 
+
 
 
 
@@ -68,12 +68,94 @@ export class AltasComponent implements OnInit {
 
 
   async add() {
-    const { nombre, apellidoPaterno,telefono,mensaje } = this.contactomodel;
-    await   this.contactoService.addAltas({
-      nombre: nombre,
-      correo: apellidoPaterno,
-      telefono: telefono,
-      mensaje: mensaje,
+    const { nombre, apellidoPaterno, telefono, mensaje } = this.contactomodel;
+    await this.contactoService.addAltas({
+      nombre: nombre,              
+      app: 
+      apm: 
+      fechaNa: 
+      calle: 
+      colonia: 
+      codigoPostal: 
+      noInterior: 
+      estado: 
+      municipio: 
+      estadocivil: 
+      correoElectro: 
+      numeroTelefonico: 
+      nombreInstitución: 
+      dirrecciónInstitucion: 
+      calleinstitucion: 
+      coloniadesinstalación: 
+      códigopostalInstiticion: 
+      noInteriorInstitucion:
+      estadoinstitución: 
+      MunicipioInstitucion: 
+      añodeIngreso: 
+      añodeEgreso: 
+      añodeEstudios: 
+      recibióCertificado: 
+      nombreEscSecundaria: 
+      direccionEscSecundaria: 
+      calleEscSecundaria: 
+      coloniaEscSecundaria: 
+      codigopostalEscSecundaria: 
+      noInteriorEscSecundaria: 
+      estadoEscSecundaria: 
+      municipioEscSecundaria: 
+      añodeIngresoEscSecundaria: 
+      añodeEgresoEscSecundaria: 
+      añosdeEstudioEscSecundaria: 
+      recibioCertificadoEscSecundaria: 
+      nombreInstitucionPreparatoria: 
+      direccionInstitucionPreparatoria: 
+      callePreparatoria: 
+      coloniaPreparatoria: 
+      codigopostalPreparatoria: 
+      noInteriorPreparatoria: 
+      estadoPreparatoria: 
+      municipioPreparatoria: 
+      añodeIngresoPreparatoria: 
+      añodeEgresoPreparatoria: 
+      añosdeEstudioPreparatoria: 
+      recibioCertificadoPreparatoria: 
+      nombreInstitucionSuperior: 
+      direccionInstitucionSuperior: 
+      calleSuperior: 
+      coloniaSuperior: 
+      codigopostalSuperior: 
+      noInteriorSuperior: 
+      estadoSuperior: 
+      municipioSuperior: 
+      añodeIngresoSuperior: 
+      añodeEgresoSuperior: 
+      añosdeEstudioSuperior: 
+      recibioCertificadoSuperior: 
+      nombreInstitucionMaestria: 
+      direccionInstitucionMaestria: 
+      calleMaestria: 
+      coloniaMaestria: 
+      codigopostalMaestria: 
+      noInteriorMaestria: 
+      estadoMaestria: 
+      municipioMaestria: 
+      añodeIngresoMaestria:
+      añodeEgresoMaestria: 
+      añosdeEstudioMaestria: 
+      recibioCertificadoMaestria: 
+      nombreInstitucionDoctorado: 
+      direccionInstitucionDoctorado: 
+      calleDoctorado: 
+      coloniaDoctorado: 
+      añodeIngresoDoctorado: 
+      añodeEgresoDoctorado: 
+      añosdeEstudioDoctorado: 
+      recibioCertificadoDoctorado: 
+      categoriaSalud: 
+      especifiquePadecimiento: 
+      puestoTrabajo: 
+      numeroEmpleado: 
+
     });
     this.toastr.success('Alguien Se pondra en contacto!', 'Success');
   }
@@ -81,7 +163,7 @@ export class AltasComponent implements OnInit {
 
 
 
-  }
+}
 
 
 
