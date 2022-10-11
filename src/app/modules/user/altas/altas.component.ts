@@ -147,7 +147,7 @@ export class AltasComponent implements OnInit {
   constructor(
     private contactoService: ContactoService,
     private toastr: ToastrService,
-
+    private firebaseService: ContactoService,
   ) { }
 
   ngOnInit(): void {
