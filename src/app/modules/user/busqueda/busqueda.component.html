@@ -1,55 +1,3 @@
-<!-- <h1>Convocatorias</h1>
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-
-            <h1>Agregar Nueva</h1>
-            <form class="add" [formGroup]="convocatoriaForm" (ngSubmit)="add()">
-                <label for="name">Titulo</label>
-                <input type="text" name="titulo" class="text-white bg-dark" [(ngModel)]="convocatoria.titulo" formControlName="titulo" [ngClass]="submitted && convocatoriaForm.controls['titulo'].errors ? 'is-invalid' : !submitted && convocatoriaForm.controls['titulo'].valid ? 'is-valid' : submitted && convocatoriaForm.controls['titulo'].valid ? 'is-valid' : null"> -->
-<!-- <div *ngIf="submitted && convocatoriaForm.controls['titulo'].errors" class="text-danger">
-        <div *ngIf="convocatoriaForm.controls['titulo'].errors.required">El titulo es requerido</div>
-    </div> -->
-
-<!-- <label for="age">Fecha Inicio</label>
-                <input type="text" name="fechaInicio" class="text-white bg-dark" required [(ngModel)]="convocatoria.fechaInicio" formControlName="fechaInicio" required/>
-
-                <label for="age">Fecha Fin</label>
-                <input type="text" name="fechaFin" class="text-white bg-dark" required [(ngModel)]="convocatoria.fechaFin" formControlName="fechaFin" required/>
-
-
-                <button type="button" class="btn btn-primary" type="submit">Agregar</button>
-
-
-            </form>
-            <button class="btn btn-success" (click)="exporExcel()"><i class="bi bi-cloud-arrow-up-fill" aria-hidden="true"></i> Exportar Excel</button>
-            <br>
-            <br>
-
-            <h1>Lista de convocatorias</h1>
-            <div class="show">
-                <ng-container *ngFor="let convocatoria of convocatoriaCollectiondata">
-                    <div>
-                        <label for="titulo-show">Titulo</label>
-                        <input type="text" class="text-white bg-dark" name="titulo-show" [value]="convocatoria.titulo" required #titulo>
-
-                        <label for="age-show">Fecha inicio</label>
-                        <input type="text" class="text-white bg-dark" name="fechaInicio-show" [value]="convocatoria.fechaInicio" required #fechaInicio>
-
-                        <label for="age-show">Fecha Fin</label>
-                        <input type="text" class="text-white bg-dark" name="fechaFin-show" [value]="convocatoria.fechaFin" required #fechaFin>
-
-                        <button type="button" class="btn btn-danger" (click)="delete(convocatoria.id)">Eliminar</button>
-                        <button type="button" class="btn btn-warning" (click)="update(convocatoria.id, titulo,fechaInicio,fechaFin)">Actualizar</button>
-                    </div>
-                    <br>
-                </ng-container>
-            </div>
-        </div>
-
-    </div>
-</div> -->
 
 <div class="container">
     <p-toolbar>
@@ -58,7 +6,7 @@
         </ng-template>
         <ng-template pTemplate="right">
             <button pButton pRipple class="p-button-info mr-2" (click)="Excel()" label="Exportar Excel" icon="pi pi-upload"> </button>
-            <button pButton pRipple label="Nueva Convocatoria" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
+            <button pButton pRipple label="Nueva Alta" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
         </ng-template>
     </p-toolbar>
 
@@ -67,17 +15,29 @@
         <ng-template pTemplate="header">
             <tr>
                 <th pSortableColumn="titulo">
-                    Titulo
+                    Nombre
                     <p-sortIcon field="titulo"></p-sortIcon>
                 </th>
                 <th pSortableColumn="fechaInicio">
-                    Fecha de inicio
+                    Direccion
                     <p-sortIcon field="fechaInicio"></p-sortIcon>
                 </th>
                 <th pSortableColumn="fechaFin">
-                    Fecha de finalizacion
+                     Contacto
                     <p-sortIcon field="fechaFin"></p-sortIcon>
                 </th>
+                <th pSortableColumn="fechaFin">
+                    Historial Academico
+                   <p-sortIcon field="fechaFin"></p-sortIcon>
+               </th>
+               <th pSortableColumn="fechaFin">
+                Historial General de salud
+               <p-sortIcon field="fechaFin"></p-sortIcon>
+           </th>
+           <th pSortableColumn="fechaFin">
+            Informacion Adicional
+           <p-sortIcon field="fechaFin"></p-sortIcon>
+       </th>
                 <th>
                     Acciones
                 </th>
@@ -106,7 +66,7 @@
         </ng-template>
         <ng-template pTemplate="summary">
             <div class="flex align-items-center justify-content-between">
-                Total de Convocatorias {{convocatoriaCollectiondata ? convocatoriaCollectiondata.length : 0 }}.
+                Total de Usuarios {{convocatoriaCollectiondata ? convocatoriaCollectiondata.length : 0 }}.
             </div>
         </ng-template>
     </p-table>
