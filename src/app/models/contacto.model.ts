@@ -85,6 +85,11 @@ export interface ContactoModel {
   especifiquePadecimiento: string;
   puestoTrabajo: string;
   numeroEmpleado: string;
-
-
+  nombreInstiticion: string;
+  coloniadesInstiticion: string;
+  noAñoenelpuesto:string;
+  puestosAnteriores:string;
+  departamentooArea:string;
+  aptitudesCH:string;
+  historial :string;
 }

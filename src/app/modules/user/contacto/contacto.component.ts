@@ -35,17 +35,7 @@ export class ContactoComponent implements OnInit {
   }
 
 
-  async add() {
-    const { name, correo,telefono,mensaje } = this.contactomodel;
-    await   this.contactoService.addAltas({
-      nombre: name,
-      correo: correo,
-      telefono: telefono,
-      mensaje: mensaje,
-    });
-    this.toastr.success('Alguien Se pondra en contacto!', 'Success');
-  }
-
+ 
 
 
 
