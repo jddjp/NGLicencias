@@ -14,12 +14,12 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 })
 export class BusquedaComponent implements OnInit {
   convocatoria = {
-    titulo: '',
+    nombre: '',
     fechaInicio: '',
     fechaFin: ''
   }
 
-  convocatoriaCollectiondata: { id: string, titulo: string, fechaInicio: Date, fechaFin: Date }[] | any = [];
+  convocatoriaCollectiondata: { id: string, nombre: string, fechaInicio: Date, fechaFin: Date }[] | any = [];
   convocatoriaForm: FormGroup;
   submitted: boolean;
 
@@ -94,6 +94,7 @@ this.submitted = false
   async get() {
     const snapshot = await this.firebaseService.getConvocatoria();
     this.updateConvocatoriaCollection(snapshot);
+    console.log(this.updateConvocatoriaCollection);
   }
 
   updateConvocatoriaCollection(snapshot: QuerySnapshot<DocumentData>) {

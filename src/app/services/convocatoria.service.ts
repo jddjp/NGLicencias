@@ -18,7 +18,7 @@ export class ConvocatoriasService {
   ){
    
     this.db = getFirestore();
-    this.convocatoriaCol = collection(this.db, 'convocatorias');
+    this.convocatoriaCol = collection(this.db, 'altasUsuarios');
    // Get Realtime Data
    console.log(this.convocatoriaCol);
    
