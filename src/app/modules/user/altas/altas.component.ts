@@ -104,8 +104,17 @@ export class AltasComponent implements OnInit {
     departamentooArea: '',
     aptitudesCH: '',
     historial: '',
-    
-    
+    nombreInstitucion:'',
+    direccionInstitucion:'',
+    codigopostalInstitucion:'',
+    estadoinstitucion:'',
+    aniodeEstudioEscSecundaria:'',
+    aniodeEstudioPreparatoria:'',
+    aniodeEstudioSuperior:'',
+    aniodeEstudioMaestria:'',
+    aniodeEstudioDoctorado:'',
+    coloniainstitucion:'',
+    correoElectronico:''
   }
 
  
